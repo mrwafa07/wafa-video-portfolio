@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="AI video portfolio — 26 posted videos for NexBrin and Q Information Hub, each linking to the live post. Open to anyone, no sign-in needed." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AI Video Portfolio — NexBrin &amp; Q Information Hub" />
+<meta property="og:description" content="26 posted videos for NexBrin and Q Information Hub — tap any card to watch the live post." />
+
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:," />
+<title>AI Video Portfolio — NexBrin &amp; Q Information Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A; --navy2:#122B4D; --orange:#FF7A1A; --orange-d:#E85F00;
+  --bg:#F6F7F9; --card:#FFFFFF; --ink:#14202E; --muted:#5A6B7F; --line:#E2E7ED;
+  --teal:#0F766E; --teal-bg:#E6F4F1;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0A1220; --card:#131E30; --ink:#EDF1F5; --muted:#9FB0C3; --line:#26354D; --teal-bg:#12332F; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+h1,h2,h3{font-family:'Archivo',sans-serif}
+a{color:inherit}
+button{min-height:44px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.hero{background:var(--navy);color:#fff;padding:44px 0 36px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:340px;height:340px;border-radius:50%;background:var(--orange);opacity:.14}
+.hero-top{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px;position:relative;z-index:1}
+.pill{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35)}
+.pill.solid{background:var(--orange);border-color:var(--orange);color:#fff}
+.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.02;margin:0 0 6px;font-weight:900;letter-spacing:-.01em;position:relative;z-index:1}
+.hero h1 .o{color:var(--orange)}
+.hero .name{font-size:clamp(18px,3vw,24px);font-weight:700;margin:0}
+.hero .role{color:#C7D3E2;margin:6px 0 0;font-size:15px;max-width:760px;position:relative;z-index:1}
+.hero .role a{color:#FFB27A;text-decoration:underline;text-underline-offset:3px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px;position:relative;z-index:1}
+.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-family:'Archivo';font-size:28px;line-height:1;color:#fff}
+.stat span{font-size:12.5px;color:#C7D3E2}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+.controls{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:14px 0}
+.controls-in{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.seg{display:flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;font:inherit;font-weight:600;font-size:14px;padding:8px 16px;border-radius:999px;cursor:pointer;color:var(--muted)}
+.seg button.on{background:var(--navy);color:#fff}
+@media (prefers-color-scheme: dark){.seg button.on{background:var(--orange);color:#fff}}
+.search{flex:1;min-width:200px;display:flex}
+.search input{flex:1;font:inherit;font-size:15px;padding:11px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink)}
+.count{font-size:13.5px;color:var(--muted);font-weight:600}
+section{padding:30px 0 6px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:6px}
+.sec-bar{width:5px;align-self:stretch;background:var(--orange);border-radius:4px;flex:none}
+.sec-bar.teal{background:var(--teal)}
+.sec-head h2{margin:0;font-size:26px;line-height:1.15}
+.sec-head p{margin:4px 0 0;color:var(--muted);font-size:14.5px;max-width:840px}
+.sec-head p a{color:var(--orange-d);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:16px 0 10px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.poster{aspect-ratio:16/10;background:var(--navy);position:relative;overflow:hidden;flex:none}
+.poster{background:linear-gradient(135deg,#0B1F3A,#1b3a5f 55%,#FF7A1A);min-height:180px}.thumb-fallback{display:flex;align-items:center;justify-content:center;height:180px;font-size:44px;color:#fff;opacity:.9}
+.poster.art{display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:#fff;background:linear-gradient(150deg,#0B3B36,#0F766E 70%)}
+.poster.art .big{font-family:'Archivo';font-weight:800;font-size:19px;line-height:1.2}
+.poster.art .sm{font-size:12px;color:rgba(255,255,255,.75);margin-top:4px}
+.play{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-size:15px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.badges{position:absolute;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap}
+.bdg{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:#fff;color:var(--navy)}
+.bdg.live{background:#1B7A3D;color:#fff}
+.bdg.q{background:var(--teal);color:#fff}
+.card-body{padding:16px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-body h3{margin:0;font-size:16.5px;line-height:1.3}
+.meta{font-size:12.5px;color:var(--muted);font-weight:600;display:flex;gap:8px;flex-wrap:wrap}
+.desc{font-size:14px;color:var(--muted);margin:0;flex:1}
+.method{font-size:12.5px;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:8px 10px}
+.method b{color:var(--ink)}
+.watch{margin-top:4px;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:14.5px;padding:12px 14px;border-radius:10px;min-height:46px}
+.watch.qb{background:var(--teal)}
+.watch:hover{opacity:.92}
+.also{font-size:12.5px;color:var(--muted)}
+.also a{font-weight:700;color:var(--orange-d);text-decoration:none}
+.also a:hover{text-decoration:underline}
+.hidden{display:none !important}
+.note{background:var(--teal-bg);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:14.5px;margin:14px 0}
+.about{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin:26px 0}
+.about h2{margin:0 0 8px;font-size:22px}
+.about p{color:var(--muted);font-size:14.5px;margin:0 0 10px}
+.about .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.about .links a{border:1px solid var(--line);border-radius:999px;padding:10px 16px;text-decoration:none;font-weight:700;font-size:14px;min-height:44px;display:inline-flex;align-items:center}
+footer{padding:26px 0 40px;color:var(--muted);font-size:13px;text-align:center}
+.empty{padding:40px;text-align:center;color:var(--muted);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="pill solid">Public portfolio — open to anyone</span>
+      <span class="pill">NexBrin · Q Information Hub</span>
+      <span class="pill">Checked 25 Nov 2026</span>
+    </div>
+    <h1>AI VIDEO<br><span class="o">PORTFOLIO</span></h1>
+    <p class="name">NexBrin · Q Information Hub</p>
+    <p class="role">A showcase of posted videos for <a href="https://www.instagram.com/nexbrin/" target="_blank" rel="noopener">NexBrin (@nexbrin)</a> and <a href="https://www.instagram.com/q_information_hub/" target="_blank" rel="noopener">Q Information Hub (@q_information_hub)</a>. Every video on this page is posted and live — tap Watch to see the work itself. Demo and unposted file videos are not included. Each card states how its video was made, with nothing overstated.</p>
+    <div class="stats">
+      <div class="stat"><b>26</b><span>posted videos in this showcase</span></div>
+      <div class="stat"><b>26</b><span>live — every card links to the real post</span></div>
+      <div class="stat"><b>4,950</b><span>views across the 22 Q Reels</span></div>
+      <div class="stat"><b>2</b><span>brands — NexBrin &amp; Q Hub</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap controls-in">
+    <div class="seg" role="group" aria-label="Filter by brand">
+      <button class="on" data-f="all">All · 26</button>
+      <button data-f="nexbrin">NexBrin · 4</button>
+      <button data-f="q">Q Information Hub · 22</button>
+    </div>
+    <div class="search"><input id="q" type="search" placeholder="Search titles — try “WordPress”, “FIFA”, “hiring”…" aria-label="Search videos"></div>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="featured-sec">
+    <div class="sec-head"><div class="sec-bar"></div><div>
+      <h2>Start here — three highlights</h2>
+      <p>Three highlights from the 26 below — also listed in full in their brand sections, not extra videos: the 4K cartoon live on all six NexBrin platforms, the Think. Build. Grow. brand film, and the most-watched Q Information Hub Reel.</p>
+    </div></div>
+    <div class="grid" id="featured-grid"></div>
+  </section>
+
+  <section data-brand-sec="nexbrin">
+    <div class="sec-head"><div class="sec-bar"></div><div>
+      <h2>NexBrin — 4 posted videos</h2>
+      <p>Instagram <a href="https://www.instagram.com/nexbrin/" target="_blank" rel="noopener">@nexbrin</a> · “We Build Scalable Digital Solutions that Drive Growth” · <a href="https://nexbrin.com" target="_blank" rel="noopener">nexbrin.com</a>. These are the four posted NexBrin showcase videos — three of them published across all six NexBrin platforms (Instagram, Facebook, Threads, TikTok, YouTube, LinkedIn). Catalog Doctor and Revenue Leak Detector appear only as coming soon / in development — they are not released.</p>
+    </div></div>
+    <div class="grid" id="nex-grid"></div>
+  </section>
+
+  <section data-brand-sec="q">
+    <div class="sec-head"><div class="sec-bar teal"></div><div>
+      <h2>Q Information Hub — 22 Reels</h2>
+      <p>Instagram <a href="https://www.instagram.com/q_information_hub/" target="_blank" rel="noopener">@q_information_hub</a> · Software Company — “We transform vision into digital reality, building smart, scalable software and experiences that matter.” · <a href="https://qinfohub.com" target="_blank" rel="noopener">qinfohub.com</a> · 157 posts · 60 followers · 4 following (checked 25 Nov 2026).</p>
+    </div></div>
+    <div class="note"><b>How to read this section:</b> these are Instagram Reels published on the Q Information Hub account, listed in full — all 22, in Reels-tab order. They are <b>not</b> labelled as confirmed AI-generated videos, because that was not verified for them. View counts are the counts shown on the Reels tab on 25 Nov 2026. <b>No duration was shown for any Q Reel</b>, so no duration is listed.</div>
+    <div class="grid" id="q-grid"></div>
+  </section>
+
+  <div class="empty hidden" id="empty">No videos match that search. Clear the search to see all 26.</div>
+
+  <div class="about">
+    <h2>About the brands</h2>
+    <p><strong style="color:var(--ink)">NexBrin</strong> — “We Build Scalable Digital Solutions that Drive Growth” · <a href="https://nexbrin.com" target="_blank" rel="noopener">nexbrin.com</a>. The four NexBrin videos above are posted across its social platforms, three of them on all six (Instagram, Facebook, Threads, TikTok, YouTube, LinkedIn).</p>
+    <p><strong style="color:var(--ink)">Q Information Hub</strong> — Software Company · “We transform vision into digital reality, building smart, scalable software and experiences that matter.” · <a href="https://qinfohub.com" target="_blank" rel="noopener">qinfohub.com</a>. All 22 Reels above are posted on its Instagram account. This page includes posted work only — every video can be watched live at its link.</p>
+    <div class="links">
+      <a href="https://www.instagram.com/nexbrin/" target="_blank" rel="noopener">Instagram — @nexbrin ↗</a>
+      <a href="https://www.instagram.com/q_information_hub/" target="_blank" rel="noopener">Instagram — @q_information_hub ↗</a>
+      <a href="https://nexbrin.com" target="_blank" rel="noopener">nexbrin.com ↗</a>
+      <a href="https://qinfohub.com" target="_blank" rel="noopener">qinfohub.com ↗</a>
+      <a href="https://www.youtube.com/@NexBrin" target="_blank" rel="noopener">YouTube — @NexBrin ↗</a>
+      <a href="https://www.linkedin.com/company/nexbrin/" target="_blank" rel="noopener">LinkedIn — NexBrin ↗</a>
+    </div>
+  </div>
+
+</main>
+<footer class="wrap">AI Video Portfolio · NexBrin · Q Information Hub · November 2026 · Posted videos only · Live links and view counts checked 25 Nov 2026 · Thumbnails are frames from the actual video files</footer>
+
+<script>
+var NEX = [
+ {t:"Websites That Sell — Animated Cartoon Reel", d:"18 Nov 2026", dur:"22 sec · 4K upscale · with audio", img:"", badge:"LIVE — ALL 6 PLATFORMS", desc:"“We don’t build websites. We build websites that sell. AI that works. Apps people love. One team, from idea to launch.” The strongest NexBrin brand film — live on Instagram, Threads, Facebook, LinkedIn, YouTube and TikTok.", method:"Supplied 22-sec cartoon, upscaled to 4K (2160×3840) with ffmpeg, original audio kept.", url:"https://www.instagram.com/reel/Df5EIYwj0Wx/", also:[["Threads","https://www.threads.com/@nexbrin/post/Df5EOUxzcli"],["Facebook","https://facebook.com/reel/2398478277667421/"],["LinkedIn","https://www.linkedin.com/feed/update/urn:li:ugcPost:7528875729313488898?actorCompanyId=144940914"],["YouTube","https://www.youtube.com/shorts/YNIs69tCyHs"],["TikTok","https://www.tiktok.com/@nexbrin0/video/7709568810692381982"]]},
+ {t:"Think. Build. Grow. — Your Store Is Leaking Sales", d:"27 Oct 2026", dur:"15 sec · 4K · with audio", img:"", badge:"LIVE — ALL 6 PLATFORMS", desc:"A growth dial runs through Catalog Health, Product Data Fixes, Leak Detection, Sales Recovery, Store Health Score and AI Insights, closing on “Built for your next big sale.” Catalog Doctor and Revenue Leak Detector shown only as in development / coming soon.", method:"Brand video production, 2160×3840 (4K), 15 seconds, published across all six NexBrin platforms.", url:"https://www.instagram.com/reel/DfAa7gaj2dN/", also:[["Facebook","https://www.facebook.com/reel/1165140492509115"],["TikTok","https://www.tiktok.com/@nexbrin0/video/7701405507566849311"],["YouTube","https://youtube.com/shorts/-QmXBxJi_yk"],["LinkedIn","https://www.linkedin.com/feed/update/urn:li:ugcPost:7520953175869378561/?actorCompanyId=144940914"]]},
+ {t:"WordPress vs Headless WordPress", d:"30 Oct 2026", dur:"10 sec · 1080×1920 · with audio", img:"", badge:"LIVE — ALL 6 PLATFORMS", desc:"Which is right for your business? Traditional WordPress means simpler management and a connected frontend/backend; Headless means separate, API-driven architecture and greater frontend flexibility. The best choice depends on goals, tech and budget.", method:"Edited explainer; enhanced 1080×1920 version rendered for sharper playback. Published across all six NexBrin platforms.", url:"https://www.instagram.com/reel/DfH0D_6jihJ/", also:[["Threads","https://www.threads.com/@nexbrin/post/DfH0XlpjzyZ"],["Facebook","https://www.facebook.com/reel/1150023114115654"],["TikTok","https://www.tiktok.com/@nexbrin0/video/7702467929295605023"],["YouTube","https://www.youtube.com/shorts/lYOiE2cGvtU"],["LinkedIn","https://www.linkedin.com/feed/update/urn:li:activity:7521945125741232129/"]]},
+ {t:"Coming Soon — Launch Teaser", d:"22 Oct 2026", dur:"10 sec · vertical · with audio", img:"", badge:"LIVE — LAUNCH DAY", desc:"The launch teaser announcing Catalog Doctor and Revenue Leak Detector as coming soon: “Two powerful tools. One smarter WooCommerce experience.” NexBrin’s first video, published on launch day.", method:"Launch teaser production, published on launch day.", url:"https://www.instagram.com/reel/DexXSlRDmOY/", also:[["TikTok","https://www.tiktok.com/@nexbrin0/video/7699241857791905054"],["Facebook","https://www.facebook.com/reel/1635115728117729"]]}
+];
+
+var Q = [
+ {t:"We stopped chasing. We started attracting.", d:"4 Jul 2026", v:"1,668 views", desc:"The most-watched Q Reel. “Ab pyaar ki nahi, clients ki kami mehsoos hoti hai.” A short, confident brand Reel about attracting clients instead of chasing them.", url:"https://www.instagram.com/q_information_hub/reel/DaXUmursYPl/"},
+ {t:"A banner can be a message.", d:"3 Jul 2026", v:"392 views", desc:"“A moment can become a story. A brand can become impossible to ignore.” Q Information Hub brand Reel.", url:"https://www.instagram.com/q_information_hub/reel/DaVpiQyMyU_/"},
+ {t:"We don’t believe in one-size-fits-all marketing", d:"29 Jun 2026", v:"327 views", desc:"Strategies aligned to business goals — branding, social media management, digital marketing, web development, content, design, AI automation and LinkedIn growth. “Your Quest, Our Solution.”", url:"https://www.instagram.com/q_information_hub/reel/DaK2Z-UM5R9/"},
+ {t:"The countdown is on! — FIFA World Cup 2026", d:"11 Jun 2026", v:"506 views", desc:"“Millions of fans. Countless dreams. One trophy. Who will lift the trophy in 2026?” A timely football Reel inviting predictions.", url:"https://www.instagram.com/q_information_hub/reel/DZdHUQ1FVKl/"},
+ {t:"New brand identity unveiled", d:"4 Jun 2026", v:"256 views", desc:"Q Information Hub unveils its refreshed logo — growth, innovation and the future it is building, with the same values, commitment and vision.", url:"https://www.instagram.com/q_information_hub/reel/DZIrRgnKv_3/"},
+ {t:"Whatever the Figma design wants, we deliver it exactly — EduMux", d:"25 Nov 2025", v:"155 views", desc:"EduMux, developed in WordPress with custom code to mirror the Figma design exactly — minimal turnaround, high performance, fully custom-coded elements.", url:"https://www.instagram.com/q_information_hub/reel/DRfGg2lkoYV/"},
+ {t:"An app experience so intuitive users feel instantly connected", d:"20 Nov 2025", v:"203 views", desc:"A feature-rich Custom Food Mobile App designed in Figma — intuitive navigation, clean layouts and a smooth flow that turns users into sales. The most-liked Q Reel in this set (27 likes).", url:"https://www.instagram.com/q_information_hub/reel/DRRjwyIjBSF/"},
+ {t:"If your product doesn’t catch the eye, it won’t catch the sale", d:"17 Nov 2025", v:"112 views", desc:"E-commerce that captivates and converts — strategy, structure and flawless execution, not just development.", url:"https://www.instagram.com/q_information_hub/reel/DRJxlaIDPHE/"},
+ {t:"Using Next.js? Here’s how we pushed it to the next level — GeoTrak", d:"13 Nov 2025", v:"166 views", desc:"GeoTrak, a next-generation telematics platform by Q Information Hub: real-time tracking and fleet intelligence. Next.js, TypeScript, React, Tailwind CSS, Figma.", url:"https://www.instagram.com/q_information_hub/reel/DQ_s4MnDOPB/"},
+ {t:"We don’t just design, we craft digital experiences — Custom Food", d:"10 Nov 2025", v:"96 views", desc:"Custom Food website design concept — aesthetic visuals and intuitive experience, from colour balance to user flow. Figma, Illustrator, Canva, Adobe XD.", url:"https://www.instagram.com/q_information_hub/reel/DQ4as1qig43/"},
+ {t:"“It was 6th September… when the sons of the soil wrote history”", d:"6 Sep 2025", v:"64 views", desc:"Defence Day tribute — a salute to the martyrs, veterans and soldiers who sacrificed their today for our tomorrow. Pakistan Zindabad.", url:"https://www.instagram.com/q_information_hub/reel/DOQQEALDIk3/"},
+ {t:"Ever land on a website and instantly feel like clicking away? — LiveBuzz Studio", d:"1 Jun 2025", v:"93 views", desc:"Full case-study Reel: LiveBuzz Studio’s one-screen, broken-mobile site rebuilt into 20+ fast, branded, mobile-first, conversion-ready pages.", url:"https://www.instagram.com/q_information_hub/reel/DKWci3bKsl7/"},
+ {t:"What We Do — All in One Place", d:"27 May 2025", v:"175 views", desc:"AI/ML, graphic design, cybersecurity, UI/UX, ERP, web and app development — complete digital solutions from design to security.", url:"https://www.instagram.com/q_information_hub/reel/DKKG2WihaQz/"},
+ {t:"Unlock Financial Insights with GL Balances!", d:"11 Mar 2025", v:"70 views", desc:"Key trends in income, sales and liabilities — year-on-year performance and net income changes for smarter financial decisions.", url:"https://www.instagram.com/q_information_hub/reel/DHCZNp6oJLq/"},
+ {t:"We’re Hiring! WordPress Developer with SEO Experience (Internship)", d:"5 Mar 2025", v:"88 views", desc:"Hiring Reel for a WordPress Developer intern with SEO knowledge — basic WordPress, SEO principles and eagerness to grow.", url:"https://www.instagram.com/q_information_hub/reel/DG0L0XqMa9E/"},
+ {t:"Stay Safe in the Digital World!", d:"28 Feb 2025", v:"58 views", desc:"Cybersecurity Reel: network security, penetration testing, encryption, threat detection and awareness training — prevent attacks before they happen.", url:"https://www.instagram.com/q_information_hub/reel/DGnAcgFsXz8/"},
+ {t:"Boost Your Brand with Stunning Graphics!", d:"27 Feb 2025", v:"115 views", desc:"Graphic design services Reel — logos, social and marketing designs, posters, banners and UI/UX for web and apps.", url:"https://www.instagram.com/q_information_hub/reel/DGkrl7pMq53/"},
+ {t:"Turn Raw Data into Business Gold!", d:"25 Feb 2025", v:"52 views", desc:"Data analytics Reel: visualisation, business intelligence, predictive analytics, data cleaning and custom reports.", url:"https://www.instagram.com/q_information_hub/reel/DGfYcW1MpRQ/"},
+ {t:"Bad Design Kills Conversions — Let’s Fix That!", d:"22 Feb 2025", v:"65 views", desc:"UI/UX Reel: wireframing and prototyping, mobile and web UI/UX, and mockup design that boosts engagement and sales.", url:"https://www.instagram.com/q_information_hub/reel/DGXrja_M3Jr/"},
+ {t:"Boost Your Website with Professional Wireframe Services!", d:"21 Feb 2025", v:"77 views", desc:"Custom website wireframes, UX/UI-optimised designs and fast, efficient delivery — turning ideas into user-friendly designs.", url:"https://www.instagram.com/q_information_hub/reel/DGVD-gesRgS/"},
+ {t:"We’re Hiring — Graphic Designer (Remote)", d:"12 Feb 2025", v:"135 views", desc:"Hiring Reel for a remote Graphic Designer to craft social visuals and ad creatives — video editing / motion graphics knowledge preferred.", url:"https://www.instagram.com/q_information_hub/reel/DF9_lZ9KMEv/"},
+ {t:"Struggling with ERP management? We’ve got the solution!", d:"10 Feb 2025", v:"77 views", desc:"ERP Management System Reel: intuitive task management, real-time progress tracking, smart analytics and automated notifications.", url:"https://www.instagram.com/q_information_hub/reel/DF4r4WHssIr/"}
+];
+
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function nexCard(v){
+  var also = v.also && v.also.length ? '<div class="also">Also on: '+v.also.map(function(a){return '<a href="'+a[1]+'" target="_blank" rel="noopener">'+esc(a[0])+' ↗</a>';}).join(' · ')+'</div>' : '';
+  return '<article class="card" data-brand="nexbrin" data-search="'+esc((v.t+' '+v.desc).toLowerCase())+'"><div class="poster"><div class="thumb-fallback">▶</div><span class="play">▶</span><span class="badges"><span class="bdg">NexBrin</span><span class="bdg live">'+esc(v.badge)+'</span></span></div><div class="card-body"><h3>'+esc(v.t)+'</h3><div class="meta"><span>'+esc(v.d)+'</span><span>·</span><span>'+esc(v.dur)+'</span></div><p class="desc">'+esc(v.desc)+'</p><div class="method"><b>How it was made:</b> '+esc(v.method)+'</div><a class="watch" href="'+v.url+'" target="_blank" rel="noopener">▶ &nbsp;Watch on Instagram</a>'+also+'</div></article>';
+}
+function qCard(v,i){
+  return '<article class="card" data-brand="q" data-search="'+esc((v.t+' '+v.desc).toLowerCase())+'"><div class="poster art"><span class="play">▶</span><span class="badges"><span class="bdg q">Q Information Hub</span><span class="bdg live">INSTAGRAM REEL</span></span><div><div class="big">'+esc(v.t)+'</div><div class="sm">Q Reel #'+(i+1)+' of 22 · Watch on Instagram ↗</div></div></div><div class="card-body"><h3>'+esc(v.t)+'</h3><div class="meta"><span>'+esc(v.d)+'</span><span>·</span><span>'+esc(v.v)+'</span><span>·</span><span>Duration not shown</span></div><p class="desc">'+esc(v.desc)+'</p><a class="watch qb" href="'+v.url+'" target="_blank" rel="noopener">▶ &nbsp;Watch on Instagram</a></div></article>';
+}
+document.getElementById('nex-grid').innerHTML = NEX.map(nexCard).join('');
+document.getElementById('q-grid').innerHTML = Q.map(qCard).join('');
+document.getElementById('featured-grid').innerHTML = [nexCard(NEX[0]), nexCard(NEX[1]), qCard(Q[0],0)].join('');
+
+var brand='all', query='';
+function apply(){
+  var n=0;
+  document.querySelectorAll('.card').forEach(function(c){
+    var okB = brand==='all' || c.dataset.brand===brand;
+    var okQ = !query || c.dataset.search.indexOf(query)>-1;
+    var show = okB && okQ;
+    var inFeat = !!c.closest('#featured-grid');
+    if(inFeat && (brand!=='all' || query)) show=false;
+    c.classList.toggle('hidden', !show);
+    if(show && !inFeat) n++;
+  });
+  document.getElementById('featured-sec').classList.toggle('hidden', brand!=='all' || !!query);
+  document.querySelectorAll('[data-brand-sec]').forEach(function(s){
+    var b=s.getAttribute('data-brand-sec');
+    s.classList.toggle('hidden', brand!=='all' && brand!==b);
+  });
+  document.getElementById('count').textContent = n + (n===1?' video':' videos') + ' shown';
+  document.getElementById('empty').classList.toggle('hidden', n!==0);
+}
+document.querySelectorAll('.seg button').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.seg button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); brand=b.dataset.f; apply();
+  });
+});
+document.getElementById('q').addEventListener('input', function(e){ query=e.target.value.trim().toLowerCase(); apply(); });
+apply();
+</script>
+</body>
+</html>
